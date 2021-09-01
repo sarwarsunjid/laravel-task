@@ -20,6 +20,7 @@
                   <tr>
                      <th style="width: 10px">Serial No.</th>
                      <th>Title</th>
+                     <th>Excerpt</th>
                      <th>Action</th>
                   </tr>
                </thead>
@@ -27,7 +28,8 @@
                   @foreach($blogs as $blog)
                   <tr>
                      <td>{{$loop->index+1}}</td>
-                     <td><a href="{{ route('blog.show',$blog->slug) }}">{{$blog->title}}</a></td>
+                     <td><h6>{{$blog->title}}</h6></td>
+                     <td><a href="{{ route('blog.show',$blog->slug) }}">{{$blog->excerpt}}</a></td>
                      <td>
                         <div class="">
                            <form  action="{{ route('blog.destroy',$blog->id) }}" method="post">
@@ -50,7 +52,6 @@
       </div>
    </div>
 </div>
-
 <!-- Main content End --> 
 @endsection
 </body>
