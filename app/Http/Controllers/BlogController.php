@@ -15,7 +15,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
+        $blogs = Blog::orderby('id','desc')->paginate(6);
         return view('blog.index', compact('blogs'));
     }
 
@@ -158,6 +158,8 @@ class BlogController extends Controller
     {
         $blog = Blog::find($id);
         $blog->delete();
+        return redirect()->route('blog.index')
+                         ->with('delete','Blog Has Been Deleted Successfully');
     }
  
    

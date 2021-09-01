@@ -1,4 +1,5 @@
 @extends('blog.layouts.app')
+@section('title', 'Create New Blog')
 @section('content')
         <div class="col-md-10 mx-auto">
             <h3>Create Blog</h3>

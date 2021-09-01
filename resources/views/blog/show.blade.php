@@ -1,4 +1,5 @@
 @extends('blog.layouts.app')
+@section('title', $blog->title)
 @section('title', $blog->meta_title)
 @section('description', $blog->meta_descr)
 @section('keywords', $blog->meta_key)

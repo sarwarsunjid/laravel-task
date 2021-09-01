@@ -35,7 +35,6 @@
                               @method('DELETE')
                               <a href="{{ route('blog.edit',$blog->id) }}" class="btn btn-success"><i class="fa fa-edit"></i></a>
                               <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                              <!-- <a href="{{ route('blog.destroy',$blog->id) }}" class="btn btn-danger" ><i class="fa fa-trash"></i></a> -->
                            </form>
                         </div>
                      </td>
@@ -44,9 +43,14 @@
                </tbody>
             </table>
          </div>
+         <br>
+         <div class="d-flex float-right">
+                {!! $blogs->links() !!}
+            </div> 
       </div>
    </div>
 </div>
+
 <!-- Main content End --> 
 @endsection
 </body>
