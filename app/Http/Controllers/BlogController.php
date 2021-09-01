@@ -51,11 +51,17 @@ class BlogController extends Controller
             'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        //for uploading image
-        $imageName = time().'.'.$request->image->extension();  
-        $path = $request->image->move(public_path('featured'), $imageName);
+        $imageName="";
+        if($request->hasFile('image')){
+            $request->validate([
+              'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            ]);
+            $imageName = time().'.'.$request->image->extension();  
+            $path = $request->image->move(public_path('featured'), $imageName);
+            
+        }
         
-        //For storing data
+
         $blog = new Blog;
         $blog->title = $request->title;
         $blog->slug = Str::slug($request->input('title'), "-");
@@ -125,7 +131,7 @@ class BlogController extends Controller
             $path = $request->image->move(public_path('featured'), $imageName);
             
         }
-        //for Updating data
+
         $blog = Blog::find($id);
         $blog->title = $request->title;
         $blog->slug = Str::slug($request->input('title'), "-");

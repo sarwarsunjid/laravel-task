@@ -8,7 +8,7 @@
   <br>
   <div class="col-lg-8">
       <img width="100%" src="{{ url('featured/'.$blog->image) }}" alt="Card image cap">
-      <p>{{$blog->content}}</p>
+      <p>{!!$blog->content!!}</p>
       <p><b>Category:</b> {{$blog->category}}</p>
   </div>        
 @endsection
