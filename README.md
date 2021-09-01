@@ -23,4 +23,4 @@ Supported Version for Shopperzarena is given below-
 - After running this command you will see that all the tables are migrated successfully.
 - After that run command __php artisan serve__
 - This command will start a development server at __http://localhost:8000__ .   
-- After migration go the browser paste this url __http://localhost:8000__  and click enter.
+- After that go the browser paste this url __http://localhost:8000/blog__  and click enter.
