@@ -3,6 +3,7 @@
 - [Supported versions](#supported-versions)  
 - [How to use](#how-to-use)
 - [Controller](#Controller)
+- [Blade Files(CRUD Files)](#Blade Files)
 
 ## Supported versions
 
@@ -30,3 +31,6 @@ Supported Version for laravel-task is given below-
 
 ## Controller
  -All the logics are written in __BlogController__  which is situated in __app->http->controllers->BlogController__.
+ 
+ ## Blade Files
+ -All the blade files are kept in __resources->views->blade__ directory
