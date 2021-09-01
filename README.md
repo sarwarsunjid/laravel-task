@@ -6,7 +6,7 @@
 
 ## Supported versions
 
-Supported Version for Shopperzarena is given below-
+Supported Version for laravel-task is given below-
     
 - PHP Version: 7.4.16 or higher. 
 
@@ -14,7 +14,7 @@ Supported Version for Shopperzarena is given below-
 
 ## How to use
 
-- Clone the repository or  __Download the zip file from clone option https://github.com/sunjid/Shopperzarena-an-ecommerce-website.git__
+- Clone the repository or  __Download the zip file from clone option https://github.com/sunjid/laravel-task.git__
 - Extract the files into __htdocs__ folder
 - Rename __.env.example__ and make it as __.env__
 - Check __.env__ files and  mysql database credentials.
