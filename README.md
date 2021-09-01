@@ -2,6 +2,7 @@
  ## Table of Contents  
 - [Supported versions](#supported-versions)  
 - [How to use](#how-to-use)
+- [Controller](#controller)
 
 ## Supported versions
 
