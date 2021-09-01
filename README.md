@@ -3,7 +3,7 @@
 - [Supported versions](#supported-versions)  
 - [How to use](#how-to-use)
 - [Controller](#Controller)
-- [Blade Files(CRUD Files)](#Blade Files)
+- [Blade Files](#blade-Files)
 
 ## Supported versions
 
