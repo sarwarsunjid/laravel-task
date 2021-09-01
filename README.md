@@ -30,7 +30,7 @@ Supported Version for laravel-task is given below-
 - After that go the browser paste this url __http://localhost:8000/blog__  and click enter.
 
 ## Controller
- -All the logics are written in __BlogController__  which is situated in __app->http->controllers->BlogController__.
+ -All the logics are written in __BlogController__  which is situated in __app->Http->controllers->BlogController__.
  
  ## Blade Files
  -All the blade files are kept in __resources->views->blade__ directory
