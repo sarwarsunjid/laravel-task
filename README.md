@@ -2,7 +2,7 @@
  ## Table of Contents  
 - [Supported versions](#supported-versions)  
 - [How to use](#how-to-use)
-- [Controller](#controller)
+- [Controller](#Controller)
 
 ## Supported versions
 
@@ -27,3 +27,6 @@ Supported Version for Shopperzarena is given below-
 - After that run command __php artisan serve__ from terminal 
 - This command will start a development server at __http://localhost:8000__ .   
 - After that go the browser paste this url __http://localhost:8000/blog__  and click enter.
+
+## Controller
+ -All the logics are written in __BlogController__  which is situated in __app->http->controllers->BlogController__.
