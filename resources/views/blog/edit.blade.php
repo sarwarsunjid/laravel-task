@@ -1,7 +1,5 @@
 @extends('blog.layouts.app')
 @section('content')
-<div class="container mt-4 mb-4">
-<div class="row">
    <div class="col-md-10 mx-auto">
       <h3>Edit Blog</h3>
       <br>
@@ -23,7 +21,7 @@
             </div>
             <div class="col-sm-12">
                <label for="inputContent"><h6>Content</h6></label>
-               <textarea name="content" id="mytextarea"> {{ $blog->content }} </textarea>
+               <textarea name="content" class="content"> {{ $blog->content }} </textarea>
             </div>
             <div class="col-sm-12">
                <label for="inputMetaTitle"><h6>Meta Title</h6></label>
@@ -43,11 +41,11 @@
             </div>
             <div class="col-sm-12">
                <label for="inputFile"><h6>File</h6></label>
-               <input name="image" type="file" class="form-control" id="inputTitle" value="{{ $blog->image }}">
+               <input name="image" type="file" class="form-control" id="inputTitle" >
+               <img src="/featured/{{ $blog->image }}" height="100px" width="100px">
             </div>
          </div>
          <button type="submit" class="btn btn-primary px-4 float-left">Submit</button>
       </form>
    </div>
-</div>
 @endsection

@@ -1,7 +1,5 @@
 @extends('blog.layouts.app')
 @section('content')
-<div class="container mt-4 mb-4">
-<div class="row">
         <div class="col-md-10 mx-auto">
             <h3>Create Blog</h3>
             <br>
@@ -22,7 +20,7 @@
                     </div>                    
                     <div class="col-sm-12">
                         <label for="inputContent"><h6>Content</h6></label>
-                        <textarea name="content" id="mytextarea"></textarea>
+                        <textarea name="content" class="content"></textarea>
                     </div>  
                     <div class="col-sm-12">
                         <label for="inputMetaTitle"><h6>Meta Title</h6></label>
@@ -48,7 +46,6 @@
                 <button type="submit" class="btn btn-primary px-4 float-left">Submit</button>
             </form>
         </div>
-    </div>
 @endsection
 
 

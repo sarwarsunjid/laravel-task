@@ -12,8 +12,12 @@
    </head>
    </head>
    <body>
-   @include('blog.partials.messages')   
-      @yield('content')
-      @include('blog.partials.scripts')
+   <div class="container mt-4 mb-4">
+      @include('blog.partials.messages') 
+      <div class="row">  
+         @yield('content')
+         @include('blog.partials.scripts')
+      </div>
+   </div>
    </body>
 </html>

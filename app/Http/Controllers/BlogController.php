@@ -39,9 +39,23 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'slug' => 'required',
+            'excerpt' => 'required',
+            'content' => 'required',  
+            'meta_title' => 'required',
+            'meta_descr' => 'required',
+            'meta_key' => 'required',
+            'category' => 'required',
+            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        //for uploading image
         $imageName = time().'.'.$request->image->extension();  
         $path = $request->image->move(public_path('featured'), $imageName);
-
+        
+        //For storing data
         $blog = new Blog;
         $blog->title = $request->title;
         $blog->slug = Str::slug($request->input('title'), "-");
@@ -51,13 +65,10 @@ class BlogController extends Controller
         $blog->meta_descr = $request->meta_descr;
         $blog->meta_key = $request->meta_key;
         $blog->category=$request->category;
-        //for uploading image
         $blog->image = $imageName;
         $blog->save();
-
         return redirect()->route('blog.index')
-            ->with('success','Blog has been created successfully');
-        
+                         ->with('success','Blog Has Been Created successfully'); 
     }
 
     /**
@@ -94,9 +105,27 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $imageName = time().'.'.$request->image->extension();  
-        $path = $request->image->move(public_path('featured'), $imageName);
-
+        $request->validate([
+            'title' => 'required',
+            'slug' => 'required',
+            'excerpt' => 'required',
+            'content' => 'required',  
+            'meta_title' => 'required',
+            'meta_descr' => 'required',
+            'meta_key' => 'required',
+            'category' => 'required',
+        ]);
+        
+        $imageName="";
+        if($request->hasFile('image')){
+            $request->validate([
+              'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            ]);
+            $imageName = time().'.'.$request->image->extension();  
+            $path = $request->image->move(public_path('featured'), $imageName);
+            
+        }
+        //for Updating data
         $blog = Blog::find($id);
         $blog->title = $request->title;
         $blog->slug = Str::slug($request->input('title'), "-");
@@ -106,9 +135,11 @@ class BlogController extends Controller
         $blog->meta_descr = $request->meta_descr;
         $blog->meta_key = $request->meta_key;
         $blog->category=$request->category;
-        //for uploading image
         $blog->image = $imageName;
         $blog->save();
+        return redirect()->route('blog.index')
+                         ->with('update','Blog Has Been Updated Successfully');
+        
     }
 
     /**

@@ -7,6 +7,6 @@
 <!-- Custom Js script -->
 <script>
   tinymce.init({
-    selector: '#mytextarea'
+    selector: 'textarea.content',
   });
   </script>
